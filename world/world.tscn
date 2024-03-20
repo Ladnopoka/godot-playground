@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtoxif6jn3hrt"]
+[gd_scene load_steps=4 format=3 uid="uid://dtoxif6jn3hrt"]
 
-[ext_resource type="PackedScene" uid="uid://drmhl46e5vt4b" path="res://imports/floating_island.glb" id="1_fo32f"]
+[ext_resource type="PackedScene" uid="uid://d3p27w2yprunl" path="res://world/floating_island.tscn" id="1_op052"]
 [ext_resource type="PackedScene" uid="uid://c0kygdw4tv7f" path="res://imports/coffee_shop_collisions.glb" id="2_vbt7v"]
+[ext_resource type="PackedScene" uid="uid://fb5jpv0p01m4" path="res://world/floating_island_small.tscn" id="3_c2o23"]
 
 [node name="World" type="Node3D"]
 
-[node name="Floating Island" parent="." instance=ExtResource("1_fo32f")]
-transform = Transform3D(3.96782, 0, 0, 0, 3.86756, 0, 0, 0, 4.96515, 0, 0, 0)
+[node name="Floating Island" parent="." instance=ExtResource("1_op052")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
 [node name="Coffee Shop" parent="Floating Island" instance=ExtResource("2_vbt7v")]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -0.0989672, 0.0637473, 0.0425525)
+transform = Transform3D(0.119035, 0, 0, 0, 0.116027, 0, 0, 0, 0.148954, -0.0785368, 0.0493093, 0.0422559)
+
+[node name="Small Floating Island" parent="." instance=ExtResource("3_c2o23")]
+transform = Transform3D(-2.59808, 0, -1.5, 0, 3, 0, 1.5, 0, -2.59808, 13.5173, -0.637304, -3.67074)
