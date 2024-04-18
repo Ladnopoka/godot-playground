@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtoxif6jn3hrt"]
+[gd_scene load_steps=6 format=3 uid="uid://dtoxif6jn3hrt"]
 
 [ext_resource type="PackedScene" uid="uid://d3p27w2yprunl" path="res://world/floating_island.tscn" id="1_op052"]
 [ext_resource type="PackedScene" uid="uid://c0kygdw4tv7f" path="res://imports/coffee_shop_collisions.glb" id="2_vbt7v"]
 [ext_resource type="PackedScene" uid="uid://fb5jpv0p01m4" path="res://world/floating_island_small.tscn" id="3_c2o23"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tgw0o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e4853"]
 
 [node name="World" type="Node3D"]
 
@@ -14,3 +18,85 @@ transform = Transform3D(0.119035, 0, 0, 0, 0.116027, 0, 0, 0, 0.148954, -0.07853
 
 [node name="Small Floating Island" parent="." instance=ExtResource("3_c2o23")]
 transform = Transform3D(-2.59808, 0, -1.5, 0, 3, 0, 1.5, 0, -2.59808, 13.5173, -0.637304, -3.67074)
+
+[node name="Bridge" type="Node3D" parent="."]
+
+[node name="Floor_1" type="MeshInstance3D" parent="Bridge"]
+transform = Transform3D(-1.09853, -2.69144e-15, 4.22374e-07, -2.57026e-07, 0.0940025, -0.276568, -6.03171e-07, -0.0400567, -0.649033, 7.24466, -0.254728, -1.7903)
+mesh = SubResource("BoxMesh_tgw0o")
+skeleton = NodePath("../../Small Floating Island")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bridge/Floor_1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridge/Floor_1/StaticBody3D"]
+transform = Transform3D(1, 0, 2.84217e-14, -2.27374e-13, 1, 0, 5.68434e-14, 3.72529e-09, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_e4853")
+
+[node name="Floor_2" type="MeshInstance3D" parent="Bridge"]
+transform = Transform3D(-0.711441, -1.99717e-15, 4.22374e-07, 1.9073e-07, 0.091293, 0.316897, -3.79374e-07, 0.0458976, -0.630325, 8.08803, -0.23147, -2.04346)
+mesh = SubResource("BoxMesh_tgw0o")
+skeleton = NodePath("../../Small Floating Island")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bridge/Floor_2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridge/Floor_2/StaticBody3D"]
+transform = Transform3D(1, 0, 2.84217e-14, -2.27374e-13, 1, 0, 5.68434e-14, 3.72529e-09, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_e4853")
+
+[node name="Floor_3" type="MeshInstance3D" parent="Bridge"]
+transform = Transform3D(-0.711441, -3.51623e-15, 3.15503e-07, -5.26234e-08, 0.104482, -0.0653104, -4.21347e-07, -0.0130491, -0.522929, 8.63732, -0.167657, -1.76912)
+mesh = SubResource("BoxMesh_tgw0o")
+skeleton = NodePath("../../Small Floating Island")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bridge/Floor_3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridge/Floor_3/StaticBody3D"]
+transform = Transform3D(1, 0, 2.84217e-14, -2.27374e-13, 1, 0, 5.68434e-14, 3.72529e-09, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_e4853")
+
+[node name="Floor_4" type="MeshInstance3D" parent="Bridge"]
+transform = Transform3D(-0.388156, -3.51623e-15, 3.15503e-07, 5.9519e-08, 0.10176, 0.135391, -2.23893e-07, 0.0270514, -0.509303, 10.5306, 0.0293829, -2.08652)
+mesh = SubResource("BoxMesh_tgw0o")
+skeleton = NodePath("../../Small Floating Island")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bridge/Floor_4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridge/Floor_4/StaticBody3D"]
+transform = Transform3D(1, 0, 2.84217e-14, -2.27374e-13, 1, 0, 5.68434e-14, 3.72529e-09, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_e4853")
+
+[node name="Floor_5" type="MeshInstance3D" parent="Bridge"]
+transform = Transform3D(-0.108605, -0.0663393, -0.365621, -0.0912922, 0.0817621, -0.293904, 0.277098, 0.000936305, -0.240129, 10.591, -0.0700617, -1.71638)
+mesh = SubResource("BoxMesh_tgw0o")
+skeleton = NodePath("../../Small Floating Island")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bridge/Floor_5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridge/Floor_5/StaticBody3D"]
+transform = Transform3D(1, 0, 2.84217e-14, -2.27374e-13, 1, 0, 5.68434e-14, 3.72529e-09, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_e4853")
+
+[node name="Floor_6" type="MeshInstance3D" parent="Bridge"]
+transform = Transform3D(-0.71144, 0.000169193, 0.000336711, 0.00122915, 0.0936198, 0.264547, 0.000135341, 0.0391474, -0.632659, 9.27962, -0.117317, -2.04346)
+mesh = SubResource("BoxMesh_tgw0o")
+skeleton = NodePath("../../Small Floating Island")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bridge/Floor_6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridge/Floor_6/StaticBody3D"]
+transform = Transform3D(1, 0, 2.84217e-14, -2.27374e-13, 1, 0, 5.68434e-14, 3.72529e-09, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_e4853")
+
+[node name="Floor_7" type="MeshInstance3D" parent="Bridge"]
+transform = Transform3D(-1.09853, -2.22891e-15, 4.22374e-07, -8.06987e-08, 0.101404, -0.0868345, -6.50666e-07, -0.0125767, -0.700138, 9.93174, -0.100221, -1.65297)
+mesh = SubResource("BoxMesh_tgw0o")
+skeleton = NodePath("../../Small Floating Island")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bridge/Floor_7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridge/Floor_7/StaticBody3D"]
+transform = Transform3D(1, 0, 2.84217e-14, -2.27374e-13, 1, 0, 5.68434e-14, 3.72529e-09, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_e4853")
+
+[editable path="Floating Island/Coffee Shop"]
+[editable path="Small Floating Island"]
