@@ -98,5 +98,8 @@ skeleton = NodePath("../../Small Floating Island")
 transform = Transform3D(1, 0, 2.84217e-14, -2.27374e-13, 1, 0, 5.68434e-14, 3.72529e-09, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_e4853")
 
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.851286, -0.399863, 0.339737, 0, 0.647486, 0.762077, -0.524702, -0.648745, 0.551196, 9.91695, 6.96032, 5.37984)
+
 [editable path="Floating Island/Coffee Shop"]
 [editable path="Small Floating Island"]
