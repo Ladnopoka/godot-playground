@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtoxif6jn3hrt"]
+[gd_scene load_steps=8 format=3 uid="uid://dtoxif6jn3hrt"]
 
 [ext_resource type="PackedScene" uid="uid://d3p27w2yprunl" path="res://world/floating_island.tscn" id="1_op052"]
 [ext_resource type="PackedScene" uid="uid://c0kygdw4tv7f" path="res://imports/coffee_shop_collisions.glb" id="2_vbt7v"]
 [ext_resource type="PackedScene" uid="uid://fb5jpv0p01m4" path="res://world/floating_island_small.tscn" id="3_c2o23"]
+[ext_resource type="VoxelGIData" uid="uid://be2imseja20qq" path="res://world/world.VoxelGI_data.res" id="4_b04np"]
+[ext_resource type="Environment" uid="uid://dkac65xmksol5" path="res://world/new_environment.tres" id="5_mak3c"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tgw0o"]
 
@@ -100,6 +102,17 @@ shape = SubResource("BoxShape3D_e4853")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.851286, -0.399863, 0.339737, 0, 0.647486, 0.762077, -0.524702, -0.648745, 0.551196, 9.91695, 6.96032, 5.37984)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+light_color = Color(0.454902, 0.552941, 0.439216, 1)
+light_energy = 2.171
+shadow_enabled = true
+
+[node name="VoxelGI" type="VoxelGI" parent="."]
+data = ExtResource("4_b04np")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("5_mak3c")
 
 [editable path="Floating Island/Coffee Shop"]
 [editable path="Small Floating Island"]
